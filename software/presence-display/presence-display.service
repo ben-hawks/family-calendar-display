@@ -1,0 +1,15 @@
+[Unit]
+Description=Turn the kiosk display on/off from the LD2410C presence sensor
+# Runs in the desktop user's session so it can reach the Wayland compositor (labwc).
+After=default.target
+
+[Service]
+Type=simple
+EnvironmentFile=-%h/.config/presence-display/presence-display.env
+ExecStart=/usr/bin/python3 %h/.local/bin/presence_display.py
+# The Wayland socket may not exist yet right after boot; just retry.
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
