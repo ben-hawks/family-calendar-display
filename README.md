@@ -18,19 +18,27 @@ FYHXele 27" touchscreen  <── wlopm on/off ── presence-display.py <──
                                                      └─(optional) MQTT ─> Home Assistant
 ```
 
-## Parts
+## Bill of materials
 
-| Part | Notes |
-|---|---|
-| Raspberry Pi 4 + official 5.1 V / 3 A PSU | Use its own supply; don't power it from the monitor's USB |
-| FYHXele 27" touchscreen | 100 × 100 VESA. Connect HDMI **and** the USB touch cable |
-| micro-HDMI → HDMI cable | |
-| HLK-LD2410C mmWave sensor | 22 × 16 mm, 2.54 mm header, Bluetooth for setup |
-| 3 × female-female jumpers, 30 cm | Pi GPIO ↔ sensor (longer if the pod is off-center) |
-| 4 × M2 or M2.5 screws (8–10 mm) | Pick the matching bracket variant below |
-| 4 × M4 VESA screws | 5 mm longer than your mount's stock screws |
-| VHB tape | Sticks the sensor pod under the bottom bezel |
-| VESA wall mount or arm | Plate ≤ 125 mm, or raise `PLATE` in the CAD script |
+Links go to the specific Amazon listing where one is given, or to an Amazon search for
+generic parts where any brand works. Prices change constantly, so check them when you
+order. None of these are affiliate links.
+
+| Qty | Part | Link | Notes |
+|---|---|---|---|
+| 1 | Raspberry Pi 4 Model B (2 GB+) | [search](https://www.amazon.com/s?k=Raspberry+Pi+4+Model+B+4GB) | 4 GB is comfortable for Chromium |
+| 1 | Official Raspberry Pi 4 PSU, 5.1 V / 3 A USB-C | [listing](https://www.amazon.com/Raspberry-Official-Power-Supply-15-3W/dp/B07YD2LZDC) | Use its own supply; don't power it from the monitor's USB |
+| 1 | microSD card, 32 GB+, A2 | [search](https://www.amazon.com/s?k=microSD+32GB+A2+U3) | Or boot from a USB SSD for a snappier kiosk |
+| 1 | FYHXele 27" touchscreen, 1080p | [listing](https://www.amazon.com/FYHXele-Touchscreen-Multi-Touch-Computer-Warehouse/dp/B0F8MPKSVT) | 100 × 100 VESA. Connect HDMI **and** the USB touch cable |
+| 1 | micro-HDMI → HDMI cable, 1 m | [search](https://www.amazon.com/s?k=micro+HDMI+to+HDMI+cable+1m) | Use the Pi's HDMI0 port (next to USB-C) |
+| 1 | HLK-LD2410C mmWave sensor | [listing](https://www.amazon.com/Coliao-LD2410C-Presence-Millimeter-HLK-LD2410/dp/B0CLRNCBF7) | 2-pack with Dupont wires. Any genuine LD2410C works ([more listings](https://www.amazon.com/s?k=ld2410c)) |
+| 3 | Female-female jumper wires, 30 cm | [search](https://www.amazon.com/s?k=dupont+jumper+wires+female+to+female+30cm) | Pi GPIO ↔ sensor. Get longer ones if the pod is off-center |
+| 4 | M2 or M2.5 screws, 8–10 mm | [M2.5 kit](https://www.amazon.com/s?k=M2.5+screw+assortment+kit) · [M2 kit](https://www.amazon.com/s?k=M2+screw+assortment+kit) | Pick the matching bracket variant below |
+| 4 | M2 / M2.5 heat-set inserts (optional) | [search](https://www.amazon.com/s?k=M2.5+heat+set+inserts+3d+printing) | Only for the `_heatset` bracket variants. Check the insert's hole size against `INSERT_D` |
+| 4 | M4 VESA screws, ~5 mm longer than stock | [search](https://www.amazon.com/s?k=M4+VESA+monitor+mounting+screws+kit) | The bracket adds 5 mm between monitor and mount |
+| 1 | 3M VHB double-sided tape | [search](https://www.amazon.com/s?k=3M+VHB+tape) | Sticks the sensor pod under the bottom bezel |
+| 1 | VESA 100 wall mount or arm | [search](https://www.amazon.com/s?k=VESA+100x100+wall+mount+27+inch) | Mount plate ≤ 125 mm, or raise `PLATE` in the CAD script |
+| — | PETG or ASA filament | — | About 90 cm³ for the bracket plus 5 cm³ for the pod |
 
 ## Hardware (`hardware/`)
 
